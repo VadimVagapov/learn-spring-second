@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Cars</title>-->
+<!--</head>-->
+<!--<body>-->
+
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Таблица</title>
+    <style type="text/css">
+        TABLE {
+            width: 300px; /* Ширина таблицы */
+            border-collapse: collapse; /* Убираем двойные линии между ячейками */
+        }
+        TD, TH {
+            padding: 3px; /* Поля вокруг содержимого таблицы */
+            border: 1px solid black; /* Параметры рамки */
+        }
+        TH {
+            background: #b0e0e6; /* Цвет фона */
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <th> Id </th>
+        <th> UserName </th>
+        <th> LastName </th>
+        <th> Email </th>
+        <th> Password </th>
+        <th> Age </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td><span th:text="${user.getId()}"> Id </span></td>
+        <td><span th:text="${user.getUserName()}"> UserName </span></td>
+        <td><span th:text="${user.getLastName()}"> LastName </span></td>
+        <td><span th:text="${user.getEmail()}"> Email </span></td>
+        <td><span th:text="${user.getPassword()}"> Password </span></td>
+        <td><span th:text="${user.getAge()}"> Age </span></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
