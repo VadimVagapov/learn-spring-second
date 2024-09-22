@@ -18,7 +18,14 @@ public class User {
 
     public User() {}
 
-    public User(Long id, String userName, String lastName, String email, String password, Integer age) {}
+    public User(Long id, String userName, String lastName, String email, String password, Integer age) {
+        this.id = id;
+        this.userName = userName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.age = age;
+    }
 
     public Long getId() {
         return id;

@@ -28,6 +28,7 @@ public class AppConfig {
     private static final String DB_DRIVER = "db.driver";
     private static final String DB_USERNAME = "db.username";
     private static final String DB_PASSWORD = "db.password";
+    private static final String HIBERNATE_DIALECT = "hibernate.dialect";
 
     @Autowired
     private Environment env;
@@ -50,6 +51,7 @@ public class AppConfig {
         Properties props=new Properties();
         props.put(HIBERNATE_SHOW_SQL, env.getProperty(HIBERNATE_SHOW_SQL));
         props.put(HIBERNATE_HBM_2_DDL_AUTO, env.getProperty(HIBERNATE_HBM_2_DDL_AUTO));
+        props.put(HIBERNATE_DIALECT, env.getProperty(HIBERNATE_DIALECT));
 
         entityManager.setPackagesToScan(new String[] { "ru.vagapov.spring.entity" });
         entityManager.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
